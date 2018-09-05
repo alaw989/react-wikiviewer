@@ -13,31 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-              <Search
-                // onSearch={query =>
-                //   fetch(urlForWiki(query))
-                //     .then(data => data.json())
-                //     .then(data => {
-                //       console.log(data.query.allpages)
-                    
-                //       const titles = [];
-                //       // query.map(x => titles.push(x.title));
-                //       this.setState({    
-                //         options: titles
-                //       });
-                //     })}
-                // options={this.state.options}
-                // onKeyDown={this.handleAction}
-                // onChange={this.handleClick}
-                // onActiveItemChange={this.active}
-                // placeholder="Search Movie Title..."
-                // maxResults={5}
-                // emptyLabel="No Matches Found"
-                // searchText=""
-                // propText=""
-                // paginationText=""
-                // delay={300}
-              />
+              <Search />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Wikipedia Viewer</h1>

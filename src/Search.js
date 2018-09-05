@@ -9,7 +9,9 @@ const urlForWiki = query => `https://en.wikipedia.org/w/api.php?action=query&for
 class Search extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            options: ""
+        }
     }
     render() {
         return (
@@ -19,10 +21,11 @@ class Search extends Component {
                         .then(data => data.json())
                         .then(data => {
                             const results = data.query.allpages
-                           
-                            const titles = results.map(x => {
-                               
-                                return x.titles;
+                           const titles = [];
+                         results.map(x => {
+                               console.log(x)
+                                titles.push(x.title)
+
                             });
 
 
@@ -32,10 +35,10 @@ class Search extends Component {
                                 options: titles
                             });
                         })}
-                options={this.state.options}
-                onKeyDown={this.handleAction}
-                onChange={this.handleClick}
-                onActiveItemChange={this.active}
+                // options={this.state.options}
+                // onKeyDown={this.handleAction}
+                // onChange={this.handleClick}
+                // onActiveItemChange={this.active}
                 placeholder="Search Movie Title..."
                 maxResults={5}
                 emptyLabel="No Matches Found"
