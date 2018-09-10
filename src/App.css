@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-header {
@@ -18,23 +18,23 @@
 }
 
 ul {
-  width: 1000px !important;
+  width: 300px !important;
   text-align: left;
   max-height: none !important;
   position: relative !important;
-  margin: 0 auto !important;
+  padding: 0;
 }
 
 ul li {
   list-style-type: none;
   background-color: rgba(0,0,0,0.5);
   margin: 10px 0;
-  padding: 30px 20px;
+  padding: 10px 20px;
 }
 
 ul li a  {
   color: #FFF;
-  font-size: 45px;
+  font-size: 18px;
 }
 
 .sr-only {
