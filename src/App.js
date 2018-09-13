@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
-import styled from "styled-components";
+import Title from "./Title.js";
+//import styled from "styled-components";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -26,6 +27,7 @@ class App extends Component {
     }
 
     let value = e.toString("");
+    console.log(value)
     if (e.length > 0) {
       fetch(urlForWiki(value))
         .then(data => data.json())
@@ -89,6 +91,8 @@ class App extends Component {
             delay={300}
           />
         </header>
+        
+        <Title wiki={this.state.options}/>
       </div>
     );
   }
