@@ -27,21 +27,23 @@ class App extends Component {
     }
 
     let value = e.toString("");
-    console.log(value)
     if (e.length > 0) {
       fetch(urlForWiki(value))
         .then(data => data.json())
         .then(data => {
-          console.log(data.query.search)
+
           const wikiResults = data.query.search
-          // let movie = data.results;
-          // const titles = [];
-          // movie.map(x => (x.title === value ? titles.push(x) : ""));
-          // if (titles.length < 1) {
-          //   return null;
-          // }
+
+          const wikiTitles = [];
+          wikiResults.map(x => {
+            x.title === value ? wikiTitles.push(x) : ""
+          });
+          if (wikiTitles.length < 1) {
+            return null;
+          }
+
           this.setState({
-            options: wikiResults
+            options: wikiTitles
           });
         });
     }
@@ -91,8 +93,8 @@ class App extends Component {
             delay={300}
           />
         </header>
-        
-        <Title wiki={this.state.options}/>
+
+        <Title wiki={this.state.options} />
       </div>
     );
   }
