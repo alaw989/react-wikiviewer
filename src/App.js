@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
 import Title from "./Title.js";
-//import styled from "styled-components";
+import Description from "./Description.js"
+import styled from "styled-components";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
