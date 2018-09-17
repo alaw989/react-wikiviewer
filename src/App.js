@@ -12,6 +12,8 @@ const urlForWiki = query =>
 
 
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -60,20 +62,10 @@ class App extends Component {
                 .then(data => data.json())
                 .then(data => {
                   const results = data.query.search;
+                  console.log(results);
                   const titles = results.map(x => {
                     return x.title
                   });
-
-                  // const concatArray = titles.reduce(function (result, value, index, array) {
-                  //   if (index % 2 === 0)
-                  //     result.push(array.slice(index, index + 2));
-                  //   return result;
-                  // }, []);
-
-                  // const arrayToString = concatArray.map(array => {
-                  //   array = array.toString('').replace(/<span class="searchmatch">/g, '').replace(/\//g, '').replace(/<span>/g, '').replace(/&quot;/g, '"').replace(',', ' - ');
-                  //   return array;
-                  // });
 
                   this.setState({
                     options: titles
@@ -94,8 +86,11 @@ class App extends Component {
             delay={300}
           />
         </header>
+        <div className="wikiBlock">
+          <Title wiki={this.state.options} />
+          <Description wiki={this.state.options} />
+        </div>
 
-        <Title wiki={this.state.options} />
       </div>
     );
   }
